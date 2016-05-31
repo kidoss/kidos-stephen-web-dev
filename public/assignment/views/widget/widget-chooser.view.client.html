@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1.25, user-scalable = no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>CS5610 Widget Chooser</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="/assignment/css/style.css" rel="stylesheet"/>
-</head>
-<body>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <p class="navbar-text pull-left">
-                <a href="/assignment/widget/widget-list.html" class="navbar-link">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="navbar-link">
                   <span class="glyphicon glyphicon-chevron-left">
                   </span>
                 </a>
@@ -28,7 +16,7 @@
 <div class="container">
     <ul class="list-group">
         <li class="list-group-item">
-            <a href="/assignment/widget/widget-heading.html">Header</a>
+            <a ng-click="model.createWidget('HEADER')">Header</a>
         </li>
         <li class="list-group-item">
             <a href="#">Label</a>
@@ -46,10 +34,10 @@
             <a href="#">Button</a>
         </li>
         <li class="list-group-item">
-            <a href="/assignment/widget/widget-image.html">Image</a>
+            <a ng-click="model.createWidget('IMAGE')">Image</a>
         </li>
         <li class="list-group-item">
-            <a href="/assignment/widget/widget-youtube.html">YouTube</a>
+            <a ng-click="model.createWidget('YOUTUBE')">YouTube</a>
         </li>
         <li class="list-group-item">
             <a href="#">Data Table</a>
@@ -63,12 +51,10 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <p class="navbar-text pull-right">
-            <a href="/assignment/user/profile.html" class="navbar-link">
+            <a href="#/user/{{model.userId}}" class="navbar-link">
                   <span class="glyphicon glyphicon-user blue">
                   </span>
             </a>
         </p>
     </div>
 </nav>
-</body>
-</html>
