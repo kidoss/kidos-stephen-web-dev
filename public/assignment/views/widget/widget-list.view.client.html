@@ -1,3 +1,10 @@
+<script>
+    $(function() {
+        $( "#sortable" ).sortable();
+        $( "#sortable" ).disableSelection();
+    });
+</script>
+
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <p class="navbar-text pull-left">
@@ -16,10 +23,9 @@
     </div>
 </nav>
 
-
-<div ng-repeat="widget in model.widgets" class="container">
-    <ul class="list-group">
-        <li class="list-group-item">
+<ul id="sortable">
+    <div ng-repeat="widget in model.widgets" class="container">
+        <li class="ui-state-default">
             <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}" class="pull-right">
                 <span class="icon-stack">
                        <i class="glyphicon glyphicon-cog"></i>
@@ -49,8 +55,8 @@
                 </div>
             </div>
         </li>
-    </ul>
-</div>
+    </div>
+</ul>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">

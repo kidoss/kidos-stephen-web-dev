@@ -11,7 +11,11 @@
         vm.websiteId = $routeParams.wid;
 
         function init() {
-            vm.pages = PageService.findPagesByWebsiteId(vm.websiteId);
+            PageService
+                .findPagesByWebsiteId(vm.websiteId)
+                .then(function(response) {
+                    vm.pages = response.data;
+                });
         }
 
         init();
@@ -24,8 +28,12 @@
         vm.createPage = createPage;
 
         function createPage(page) {
-            PageService.createPage(vm.userId, page);
-            $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
+            PageService
+                .createPage(vm.websiteId, page)
+                .then(function(response) {
+                    $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
+                });
+            
         }
     }
 
@@ -38,19 +46,29 @@
         vm.deletePage = deletePage;
         
         function init() {
-            vm.page = PageService.findPageById(vm.pageId);
+            PageService
+                .findPageById(vm.pageId)
+                .then(function(response) {
+                    vm.page = response.data;
+                });
         }
         
         init();
 
         function updatePage(page) {
-            PageService.updatePage(vm.pageId, page);
-            $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
+            PageService
+                .updatePage(vm.pageId, page)
+                .then(function(response) {
+                    $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
+                });
         }
 
         function deletePage() {
-            PageService.deletePage(vm.pageId);
-            $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
+            PageService
+                .deletePage(vm.pageId)
+                .then(function(response) {
+                    $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
+                });
         }
     }
 })();

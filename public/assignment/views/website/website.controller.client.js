@@ -10,7 +10,11 @@
         vm.userId = $routeParams.uid;
 
         function init() {
-            vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
+            WebsiteService
+                .findWebsitesByUser(vm.userId)
+                .then(function(response) {
+                    vm.websites = response.data;
+                });
         }
 
         init();
@@ -22,8 +26,12 @@
         vm.createWebsite = createWebsite;
 
         function createWebsite(website) {
-            WebsiteService.createWebsite(vm.userId, website);
-            $location.url("/user/" + vm.userId + "/website");
+            WebsiteService
+                .createWebsite(vm.userId, website)
+                .then(function(response) {
+                    $location.url("/user/" + vm.userId + "/website");
+                });
+            
         }
     }
 
@@ -35,19 +43,30 @@
         vm.deleteWebsite = deleteWebsite;
 
         function init() {
-            vm.website = WebsiteService.findWebsiteById(vm.websiteId);
+            WebsiteService
+                .findWebsiteById(vm.websiteId)
+                .then(function(response) {
+                    vm.website = response.data;
+                });
         }
 
         init();
 
         function updateWebsite(website) {
-            WebsiteService.updateWebsite(vm.websiteId, website);
-            $location.url("/user/" + vm.userId + "/website");
+            WebsiteService
+                .updateWebsite(vm.websiteId, website)
+                .then(function(response) {
+                    $location.url("/user/" + vm.userId + "/website");
+                });
+            
         }
 
         function deleteWebsite() {
-            WebsiteService.deleteWebsite(vm.websiteId);
-            $location.url("/user/" + vm.userId + "/website");
+            WebsiteService
+                .deleteWebsite(vm.websiteId)
+                .then(function(response) {
+                    $location.url("/user/" + vm.userId + "/website");
+                });
         }
     }
 })();
