@@ -28,9 +28,9 @@
         var vm = this;
         vm.createUser = createUser;
 
-        function createUser(user) {
+        function createUser(username, password) {
             UserService
-                .createUser(user)
+                .createUser(username, password)
                 .then(function(response) {
                     vm.user = response.data;
 

@@ -12,6 +12,7 @@
         vm.pageId = $routeParams.pid;
         vm.getSafeHtml = getSafeHtml;
         vm.getSafeUrl = getSafeUrl;
+        vm.wamCallback = wamCallback;
 
         function init() {
             WidgetService
@@ -33,6 +34,11 @@
             var url = "https://www.youtube.com/embed/" + id;
             return $sce.trustAsResourceUrl(url);
         }
+
+        function wamCallback(start, end) {
+            console.log("Controller " + start + " " + end);
+            WidgetService.reorderWidget(vm.pageId, start, end);
+        }
     }
 
     function NewWidgetController($routeParams, $location, WidgetService) {
@@ -46,6 +52,7 @@
             var widget = {
                 type: type
             };
+
             WidgetService
                 .createWidget(vm.pageId, widget)
                 .then(function(response) {
@@ -75,7 +82,7 @@
         init();
 
         function updateWidget(widget) {
-            WidgetService
+             WidgetService
                 .updateWidget(vm.widgetId, widget)
                 .then(function(response) {
                     $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget");
