@@ -72,6 +72,10 @@ module.exports = function() {
                     }
                 });
         } else if(widget.type === 'TEXT') {
+            if(widget.rows == null) {
+                widget.rows = 1;
+            }
+
             return Widget
                 .update({_id: widgetId},{
                     $set: {
