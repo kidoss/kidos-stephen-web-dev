@@ -33,7 +33,7 @@ module.exports = function() {
 
     function updateWidget(widgetId, widget) {
         delete widget._id;
-        console.log(widget.order);
+        
         if(widget.order == null) {
             widget.order = 999;
         }
@@ -135,7 +135,6 @@ module.exports = function() {
         }).then(function(response) {
             start = Number(start);
             end = Number(end);
-            console.log(start + " " + end + " swap");
 
             if(start < end) {
                 for (i in widgets) {
