@@ -49,3 +49,10 @@ a:active {
     width: 100%;
     height: 100%;
 }
+
+form.ng-submitted input.ng-invalid {
+    background-color: pink;
+}
+form.ng-submitted input.ng-valid {
+    background-color: lightgreen;
+}

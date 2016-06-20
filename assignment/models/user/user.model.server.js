@@ -7,20 +7,24 @@ module.exports = function() {
     var api = {
         createUser: createUser,
         findUserById: findUserById,
+        findUserByUsername: findUserByUsername,
         findUserByCredentials: findUserByCredentials,
         updateUser: updateUser,
-        deleteUser: deleteUser
+        deleteUser: deleteUser,
+        findFacebookUser: findFacebookUser
     };
     return api;
 
     function createUser(user) {
-        console.log("user.model.server.createUser()");
-        console.log(user);
         return User.create(user);
     }
 
     function findUserById(userId) {
         return User.findById(userId);
+    }
+
+    function findUserByUsername(username) {
+        return User.findOne({username: username});
     }
 
     function findUserByCredentials(username, password) {
@@ -42,5 +46,9 @@ module.exports = function() {
 
     function deleteUser(userId) {
         return User.remove({_id: userId});
+    }
+
+    function findFacebookUser(facebookId) {
+        return User.findOne({'facebook.id': facebookId});
     }
 };

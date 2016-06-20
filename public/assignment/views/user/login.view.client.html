@@ -1,7 +1,18 @@
 <div class="container">
+    <div class="alert alert-danger" ng-show="login.$submitted && login.$invalid">
+        <strong>Error</strong> Please check that all fields are valid
+    </div>
     <h1>Login</h1>
-    <input ng-model="model.user.username" type="text" class="form-control" id="username" placeholder="username"/>
-    <input ng-model="model.user.password" type="password" class="form-control" id="password" placeholder="password"/>
-    <a ng-click="model.login(model.user)" class="btn btn-primary btn-block">Login</a>
+    <form name="login" novalidate>
+        <input ng-model="model.user.username" type="text" class="form-control" name="username" placeholder="username" required/>
+        <span ng-show="login.$submitted && login.username.$invalid">Username is required</span>
+        <input ng-model="model.user.password" type="password" class="form-control" name="password" placeholder="password" required/>
+        <span ng-show="login.$submitted && login.password.$invalid">Password is required</span>
+        <button type="submit" ng-click="model.login(model.user)" class="btn btn-primary btn-block">Login</button>
+    </form>
     <a href="#/register" class="btn btn-success btn-block">Register</a>
+    <a href="/auth/facebook" class="btn btn-primary btn-block">
+        <span class="fa fa-facebook"></span>
+        Facebook
+    </a>
 </div>

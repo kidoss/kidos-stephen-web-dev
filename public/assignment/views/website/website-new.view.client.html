@@ -1,34 +1,39 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <p class="navbar-text pull-left">
-            <a href="#/user/{{model.userId}}/website" class="navbar-link">
-              <span class="glyphicon glyphicon-chevron-left">
-              </span>
-            </a>
-        </p>
-        <a class="navbar-brand" href="#">New Website</a>
-        <p class="navbar-text pull-right">
-            <a ng-click="model.createWebsite(model.website)" class="navbar-link">
-              <span class="glyphicon glyphicon-ok">
-              </span>
-            </a>
-        </p>
+<form name="new" novalidate>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <p class="navbar-text pull-left">
+                <a href="#/user/{{model.userId}}/website" class="navbar-link">
+                  <span class="glyphicon glyphicon-chevron-left">
+                  </span>
+                </a>
+            </p>
+            <a class="navbar-brand" href="#">New Website</a>
+            <p class="navbar-text pull-right">
+                <button type="submit" ng-click="new.$valid && model.createWebsite(model.website)" style="border:none;background-color:#F8F8F8;" class="navbar-link">
+                  <span class="glyphicon glyphicon-ok">
+                  </span>
+                </button>
+            </p>
+        </div>
+    </nav>
+
+    <div class="alert alert-danger" ng-show="new.$submitted && new.$invalid">
+        <strong>Error</strong> Please check that all fields are valid
     </div>
-</nav>
 
+    <div class="container">
 
-<div class="container">
-    <form>
         <div class="form-group">
             <label for="name">Name</label>
-            <input ng-model="model.website.name" type="text" class="form-control" id="name" placeholder="Name">
+            <input ng-model="model.website.name" type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+            <span ng-show="new.$submitted && new.name.$invalid">Name is required</span>
         </div>
         <div class="form-group">
             <label for="description">Description</label>
             <textarea ng-model="model.website.description" class="form-control" rows="3" id="description" placeholder="Description"></textarea>
         </div>
-    </form>
-</div>
+    </div>
+</form>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">

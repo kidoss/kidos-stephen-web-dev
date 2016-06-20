@@ -1,36 +1,40 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <p class="navbar-text pull-left">
-            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page" class="navbar-link">
-                  <span class="glyphicon glyphicon-chevron-left">
-                  </span>
-            </a>
-        </p>
-        <a class="navbar-brand" href="#">Edit Page</a>
-        <p class="navbar-text pull-right">
-            <a ng-click="model.updatePage(model.page)" class="navbar-link">
-                  <span class="glyphicon glyphicon-ok">
-                  </span>
-            </a>
-        </p>
+<form name="edit" novalidate>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <p class="navbar-text pull-left">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page" class="navbar-link">
+                      <span class="glyphicon glyphicon-chevron-left">
+                      </span>
+                </a>
+            </p>
+            <a class="navbar-brand" href="#">Edit Page</a>
+            <p class="navbar-text pull-right">
+                <button type="submit" ng-click="edit.$valid && model.updatePage(model.page)" style="border:none;background-color:#F8F8F8;" class="navbar-link">
+                      <span class="glyphicon glyphicon-ok">
+                      </span>
+                </button>
+            </p>
+        </div>
+    </nav>
+
+    <div class="alert alert-danger" ng-show="edit.$submitted && edit.$invalid">
+        <strong>Error</strong> Please check that all fields are valid
     </div>
-</nav>
 
-
-<div class="container">
-    <form>
+    <div class="container">
         <div class="form-group">
             <label for="name">Name</label>
-            <input ng-model="model.page.name" type="text" class="form-control" id="name" value="Blog Post">
+            <input ng-model="model.page.name" type="text" class="form-control" id="name" name="name" value="Blog Post" required>
+            <span ng-show="edit.$submitted && edit.name.$invalid">Name is required</span>
         </div>
         <div class="form-group">
             <label for="title">Title</label>
             <input ng-model="model.page.title" type="text" class="form-control" id="title" placeholder="Page Title">
         </div>
-    </form>
 
-    <a ng-click="model.deletePage()" class="btn btn-danger btn-block">Delete</a>
-</div>
+        <a ng-click="model.deletePage()" class="btn btn-danger btn-block">Delete</a>
+    </div>
+</form>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">

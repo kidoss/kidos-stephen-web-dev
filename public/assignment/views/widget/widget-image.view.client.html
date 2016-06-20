@@ -1,27 +1,31 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <p class="navbar-text pull-left">
-            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="navbar-link">
-                  <span class="glyphicon glyphicon-chevron-left">
-                  </span>
-            </a>
-        </p>
-        <a class="navbar-brand" href="#">Widget Edit</a>
-        <p class="navbar-text pull-right">
-            <a ng-click="model.updateWidget(model.widget)" class="navbar-link">
-                  <span class="glyphicon glyphicon-ok">
-                  </span>
-            </a>
-        </p>
+<form name="widget" novalidate>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <p class="navbar-text pull-left">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="navbar-link">
+                      <span class="glyphicon glyphicon-chevron-left">
+                      </span>
+                </a>
+            </p>
+            <a class="navbar-brand" href="#">Widget Edit</a>
+            <p class="navbar-text pull-right">
+                <button type="submit" ng-click="widget.$valid && model.updateWidget(model.widget)" style="border:none;background-color:#F8F8F8;" class="navbar-link">
+                      <span class="glyphicon glyphicon-ok">
+                      </span>
+                </button>
+            </p>
+        </div>
+    </nav>
+
+    <div class="alert alert-danger" ng-show="widget.$submitted && widget.$invalid">
+        <strong>Error</strong> Please check that all fields are valid
     </div>
-</nav>
 
-
-<div class="container">
-    <form>
+    <div class="container">
         <div class="form-group">
             <label for="name">Name</label>
-            <input ng-model="model.widget.name" type="text" class="form-control" id="name">
+            <input ng-model="model.widget.name" type="text" class="form-control" id="name" name="name" required>
+            <span ng-show="widget.$submitted && widget.name.$invalid">Name is required</span>
         </div>
         <div class="form-group">
             <label for="text">Text</label>
@@ -35,8 +39,10 @@
             <label for="width">Width</label>
             <input ng-model="model.widget.width" type="text" class="form-control" id="width" value="100%">
         </div>
-    </form>
+    </div>
+</form>
 
+<div class="container">
     <form action="/api/upload"  method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="upload">Upload</label>
