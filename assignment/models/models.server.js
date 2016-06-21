@@ -5,7 +5,7 @@ module.exports = function() {
     var host = process.env.OPENSHIFT_MONGODB_DB_HOST;
     var port = process.env.OPENSHIFT_MONGODB_DB_PORT;
     //mongoose.createConnection('mongodb://localhost/cs5610summer1');
-    mongoose.createConnection('mongodb://' + user + ':' + password + '@' + host + ':' + port + '/');
+    mongoose.createConnection('mongodb://' + user + ':' + password + '@' + host + ':' + port + '/cs5610summer1');
 
     var models = {
         userModel: require("./user/user.model.server")(),
