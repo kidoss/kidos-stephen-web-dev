@@ -1,30 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Web Dev Course Home Page</title>
+    <meta name="viewport" content="initial-scale=1.25, user-scalable = no">
+    <title>Steve Kidos CS5610 Home</title>
+    <link href="/css/style.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h1>Web Dev Course Home Page</h1>
+    <nav class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">CS5610</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="assignment/index.html">Assignment</a></li>
+                    <li><a href="project/index.html">Project</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <p>
-        Testing openshift
-    </p>
+    <div class="intro">
+        <h1>Stephen Kidos</h1>
+        <h3>Software Engineer</h3>
+        <h3>Graduate Student at Northeastern University</h3>
+        <a href="https://github.com/kidoss" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+        <a href="http://webdev-skidos.rhcloud.com/" class="btn btn-default btn-lg"><i class="fa fa-external-link"></i> <span class="network-name">Openshift</span></a>
+    </div>
 
-    <h2>Required links</h2>
-    <ul>
-        <li>
-            <a href="project/index.html">Project</a>
-        </li>
-        <li>
-            <a href="assignment/index.html">Assignment</a>
-        </li>
-        <li>
-            <a href="test/index.html">Test MongoDB</a>
-        </li>
-        <li>
-            <a href="#">Your public repository at GitHub.com</a>
-        </li>
-    </ul>
+    <div class="content-alt-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr>
+                    <img class="img-responsive" src="uploads/cork-wallet.png">
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <br/><br/>
+                    <a href="assignment/index.html"><h2 class="section-heading">CS5610 Project</h2></a>
+                    <blockquote>
+                        <p>
+                            <h4>
+                                Placeholder
+                            </h4>
+                        </p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-alt-b">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr>
+                    <br/><br/>
+                    <br/><br/>
+                    <a href="assignment/index.html"><h2 class="section-heading">CS5610 Web App Maker</h2></a>
+                    <blockquote>
+                        <p>
+                            <h4>
+                                <dd>This application is designed to make creating websites easy for those with not much experience. Users can create multiple websites. Websites can have multiple pages. Pages can be filled with multiple widgets of different kinds.
+                            </h4>
+                        </p>
+                        <p>
+                            <h4>
+                                <dd>Widgets are the heart of the websites. The image to the right is an example of how widgets are use to design pages. Widgets can be images, text, pages, or even formatted html for more experienced users. They can be rearranged, resized or formatted in other ways to the specification of the user.
+                            </h4>
+                        </p>
+                    </blockquote>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <br/><br/>
+                    <img class="img-responsive" src="uploads/assignment.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a name="about"></a>
+    <div class="content-alt-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr>
+                    <br/><br/>
+                    <img class="img-responsive" src="uploads/self.png" align="right">
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <br/><br/>
+                    <a href="assignment/index.html"><h2 class="section-heading">About Steve Kidos</h2></a>
+                    <blockquote>
+                        <p>
+                            <h4>
+                                Steve is a graduate student in Computer Science at Northeastern University. His focus is artificial intelligence and has an interest in pursuing machine learning professionally.
+                                He has some experience in creating both web applications and android applications. Some of the technology he has experience in includes Django, MySQL, Java, Python, HTML/CSS, Javascript, Express.js, Angular.js, Node.js, C++, and minimal experience in a few others.
+                            </h4>
+                        </p>
+                        <p>
+                            <h4>
+                                Some relevant coursework he has taken includes Web Development, Machine Learning, Information Retrieval, Foundation in Artificial Intelligence, Managing Software Development, Game AI, and Algorithms. He also took many general computer science classes in undergraduate education at Indiana University of Pennsylvania.
+                            </h4>
+                        </p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a name="contact"></a>
+    <div class="content-alt-b">
+        <div class="container">
+            <div class="row">
+                <br/><br/>
+                <a href="assignment/index.html"><h2 class="section-heading">Contact</h2></a>
+                <blockquote>
+                    <p>
+                        <h4>
+                            To contact Steve, please e-mail him at steve.kidos@gmail.com
+                        </h4>
+                    </p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 </html>
