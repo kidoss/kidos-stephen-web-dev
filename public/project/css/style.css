@@ -42,3 +42,39 @@ form.ng-submitted input.ng-invalid {
 form.ng-submitted input.ng-valid {
     background-color: lightgreen;
 }
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+.intro {
+    padding-top: 80px;
+    padding-bottom: 200px;
+    text-align: center;
+    font-size: 1.5em;
+    background: url("../../uploads/congruent_pentagon.png") no-repeat center center;
+    background-size: cover;
+}
+
+.content-a {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #e8e8e8;
+}
+
+.content-b {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #f4f4f4;
+}
