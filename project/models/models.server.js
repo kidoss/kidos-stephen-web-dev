@@ -6,7 +6,7 @@ module.exports = function() {
     var port = process.env.OPENSHIFT_MONGODB_DB_PORT;
 
     if(user && password && host && port) {
-        mongoose.createConnection('mongodb://' + user + ':' + password + '@' + host + ':' + port + '/cs5610');
+        mongoose.createConnection('mongodb://' + user + ':' + password + '@' + host + ':' + port + '/webdev');
     } else {
         mongoose.createConnection('mongodb://localhost/cs5610summer1');
     }
