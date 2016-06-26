@@ -2,6 +2,7 @@ module.exports = function() {
     var mongoose = require("mongoose");
 
     var UserSchema = mongoose.Schema({
+        _manager: {type: mongoose.Schema.ObjectId, ref: "Manager"},
         username: {type: String, required: true},
         password: String,
         firstName: String,

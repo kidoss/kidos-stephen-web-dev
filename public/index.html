@@ -10,7 +10,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -42,20 +42,32 @@
         <a href="http://webdev-skidos.rhcloud.com/" class="btn btn-default btn-lg"><i class="fa fa-external-link"></i> <span class="network-name">Openshift</span></a>
     </div>
 
-    <div class="content-alt-a">
+    <div class="content-a">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-sm-6">
                     <hr>
-                    <img class="img-responsive" src="uploads/cork-wallet.png">
+                    <img class="img-responsive" src="uploads/project.png">
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                     <br/><br/>
-                    <a href="assignment/index.html"><h2 class="section-heading">CS5610 Project</h2></a>
+                    <a href="assignment/index.html"><h2 class="section-heading">CS5610 Project - Ads Manager</h2></a>
                     <blockquote>
                         <p>
                             <h4>
-                                Placeholder
+                                This is a web application for marketing managers to manage ad campaigns and assign
+                                users to specific ad campaigns. Their are two classes of users: managers and general users.
+                                Managers can create and manage campaigns, ads and users. They can assign users to specific campaigns
+                                and correspond with their users through a messaging system. Users have their accounts created by managers
+                                and are granted access to campaigns by their managers. Once they have access to a campaign, they can create
+                                and manage ads for that campaign. They also have the ability to message their manager if need be.
+                            </h4>
+                        </p>
+                        <p>
+                            <h4>
+                                To briefly describe the data model of this application, there are 5 objects: managers, users, campaigns, ads and messages.
+                                Managers have a one-to-many relationship with users, campaigns and messages. Users have a one-to-many relationship with messages
+                                and a many-to-many relationship with campaigns. Campaigns have a one-to-many relationship with ads. This is represented in this diagram (<a href="http://i.imgur.com/QTgwz1p.png">link</a>).
                             </h4>
                         </p>
                     </blockquote>
@@ -64,7 +76,7 @@
         </div>
     </div>
 
-    <div class="content-alt-b">
+    <div class="content-b">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-sm-6">
@@ -94,7 +106,7 @@
     </div>
 
     <a name="about"></a>
-    <div class="content-alt-a">
+    <div class="content-a">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-sm-6">
@@ -124,7 +136,7 @@
     </div>
 
     <a name="contact"></a>
-    <div class="content-alt-b">
+    <div class="content-b">
         <div class="container">
             <div class="row">
                 <br/><br/>

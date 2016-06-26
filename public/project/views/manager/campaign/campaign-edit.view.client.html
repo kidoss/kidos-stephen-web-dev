@@ -1,0 +1,59 @@
+<form name="edit" novalidate>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <p class="navbar-text pull-left">
+                <a href="#/manager/{{model.managerId}}/campaign" class="navbar-link">
+                  <span class="glyphicon glyphicon-chevron-left">
+                  </span>
+                </a>
+            </p>
+            <a class="navbar-brand">{{model.campaign.name}} Campaign</a>
+            <p class="navbar-text pull-right">
+                <button style="background-color:#222222; border:none" ng-click="edit.$valid && model.updateCampaign(model.campaign)" class="navbar-link">
+                  <span class="glyphicon glyphicon-ok white">
+                  </span>
+                </button>
+            </p>
+        </div>
+    </nav>
+
+    <div class="alert alert-danger" ng-show="edit.$submitted && edit.$invalid">
+        <strong>Error</strong> Please check that all fields are valid
+    </div>
+
+    <div class="container">
+        <div class="form-group">
+            <label for="name">Campaign Name</label>
+            <input ng-model="model.campaign.name" type="text" class="form-control" id="name" name="name" required/>
+            <span ng-show="edit.$submitted && edit.name.$invalid">Name is required</span>
+        </div>
+        <div class="form-group">
+            <label for="description">Campaign Description</label>
+            <textarea ng-model="model.campaign.description" class="form-control" rows="3" id="description"></textarea>
+        </div>
+        <label for="users">Users</label>
+        <div class="container" id="users">
+            <ul class="list-group">
+                <div ng-repeat="user in model.campaignUsers" class="container">
+                    <li class="list-group-item">
+                        {{user.username}}
+                    </li>
+                </div>
+            </ul>
+
+            <a href="#/manager/{{model.managerId}}/campaign/{{model.campaign._id}}/user" class="btn btn-primary btn-block" style="margin-bottom: 5px">Add User</a>
+        </div>
+        <a ng-click="model.deleteCampaign()" class="btn btn-danger btn-block">Delete</a>
+    </div>
+</form>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container-fluid">
+        <p class="navbar-text pull-right">
+            <a href="#/user/{{model.userId}}" class="navbar-link">
+                  <span class="glyphicon glyphicon-user white">
+                  </span>
+            </a>
+        </p>
+    </div>
+</nav>

@@ -1,0 +1,46 @@
+<form name="new" novalidate>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <p class="navbar-text pull-left">
+                <a href="#/user/{{model.userId}}/message" class="navbar-link">
+                  <span class="glyphicon glyphicon-chevron-left">
+                  </span>
+                </a>
+            </p>
+            <a class="navbar-brand">Message to Manager</a>
+            <p class="navbar-text pull-right">
+                <button type="submit" style="background-color:#222222; border:none" ng-click="new.$valid && model.createMessage(model.message)" class="navbar-link">
+                  <span class="glyphicon glyphicon-ok white">
+                  </span>
+                </button>
+            </p>
+        </div>
+    </nav>
+
+    <div class="alert alert-danger" ng-show="new.$submitted && new.$invalid">
+        <strong>Error</strong> Please check that all fields are valid
+    </div>
+
+    <div class="container">
+        <div class="form-group">
+            <label for="title">Message Title</label>
+            <input ng-model="model.message.title" type="text" class="form-control" id="title" name="title" placeholder="Message Title" required>
+            <span ng-show="new.$submitted && new.name.$invalid">Title is required</span>
+        </div>
+        <div class="form-group">
+            <label for="message">Message Contents</label>
+            <textarea ng-model="model.message.message" class="form-control" rows="3" id="message" placeholder="Message"></textarea>
+        </div>
+    </div>
+</form>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container-fluid">
+        <p class="navbar-text pull-right">
+            <a href="#/user/{{model.userId}}" class="navbar-link">
+              <span class="glyphicon glyphicon-user white">
+              </span>
+            </a>
+        </p>
+    </div>
+</nav>

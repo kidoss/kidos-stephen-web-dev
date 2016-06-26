@@ -1,0 +1,52 @@
+<form name="new" novalidate>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <p class="navbar-text pull-left">
+                <a href="#/manager/{{model.managerId}}/user" class="navbar-link">
+                  <span class="glyphicon glyphicon-chevron-left">
+                  </span>
+                </a>
+            </p>
+            <a class="navbar-brand">New User</a>
+            <p class="navbar-text pull-right">
+                <button type="submit" style="background-color:#222222; border:none" ng-click="new.$valid && model.createUser(model.user)" class="navbar-link">
+                  <span class="glyphicon glyphicon-ok white">
+                  </span>
+                </button>
+            </p>
+        </div>
+    </nav>
+
+    <div class="alert alert-danger" ng-show="new.$submitted && new.$invalid">
+        <strong>Error</strong> Please check that all fields are valid
+    </div>
+
+    <div class="container">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input ng-model="model.user.username" type="text" class="form-control" id="username" placeholder="username" required/>
+            <span ng-show="register.$submitted && register.username.$invalid">Username is required</span>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input ng-model="model.user.password" type="password" class="form-control" id="password" placeholder="password" required/>
+            <span ng-show="register.$submitted && register.password.$invalid">Password is required</span>
+        </div>
+        <div class="form-group">
+            <label for="verify">Verify Password</label>
+            <input ng-model="model.user.verifyPassword" ng-pattern="model.user.password" type="password" class="form-control" id="verify" placeholder="verify password" required/>
+            <span ng-show="register.$submitted && register.verify.$error.pattern">Passwords don't match</span>
+        </div>
+    </div>
+</form>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container-fluid">
+        <p class="navbar-text pull-right">
+            <a href="#/manager/{{model.managerId}}" class="navbar-link">
+              <span class="glyphicon glyphicon-user white">
+              </span>
+            </a>
+        </p>
+    </div>
+</nav>

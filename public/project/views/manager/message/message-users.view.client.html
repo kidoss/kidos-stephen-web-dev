@@ -1,0 +1,56 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <p class="navbar-text pull-left">
+                <a href="#/manager/{{model.managerId}}/message" class="navbar-link">
+                  <span class="glyphicon glyphicon-chevron-left">
+                  </span>
+                </a>
+            </p>
+            <a class="navbar-brand">New Message</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#/manager/{{model.managerId}}/campaign">Campaigns</a></li>
+                <li><a href="#/manager/{{model.managerId}}/user">Users</a></li>
+                <li class="active"><a href="#/manager/{{model.managerId}}/message"><span class="glyphicon glyphicon-envelope"></span> Messages</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<label for="users">Select User to Message</label>
+<div class="container" id="users">
+    <div class="input-group" style="margin-bottom: 5px">
+        <input ng-model="model.search" type="text" class="form-control" placeholder="Search user">
+            <span class="input-group-btn">
+                <a ng-click="model.searchUsers(model.search)" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+                </a>
+            </span>
+    </div>
+
+    <ul class="list-group">
+        <div ng-repeat="user in model.users" class="container">
+            <li class="list-group-item">
+                <a href="#/manager/{{model.managerId}}/message/new/{{user._id}}">{{user.username}}</a>
+            </li>
+        </div>
+    </ul>
+</div>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container-fluid">
+        <p class="navbar-text pull-right">
+            <a href="#/manager/{{model.managerId}}" class="navbar-link">
+              <span class="glyphicon glyphicon-user white">
+              </span>
+            </a>
+        </p>
+    </div>
+</nav>

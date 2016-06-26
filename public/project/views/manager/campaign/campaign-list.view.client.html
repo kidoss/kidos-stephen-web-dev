@@ -1,0 +1,45 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">Campaigns</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#/manager/{{model.managerId}}/campaign">Campaigns</a></li>
+                <li><a href="#/manager/{{model.managerId}}/user">Users</a></li>
+                <li><a href="#/manager/{{model.managerId}}/message"><span class="glyphicon glyphicon-envelope"></span> Messages</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <ul class="list-group">
+        <div ng-repeat="campaign in model.campaigns" class="container">
+            <li class="list-group-item">
+                <a href="#/manager/{{model.managerId}}/campaign/{{campaign._id}}/ad">{{campaign.name}}</a>
+                <a href="#/manager/{{model.managerId}}/campaign/{{campaign._id}}" class="pull-right">
+                    <i class="glyphicon glyphicon-cog"></i>
+                </a>
+            </li>
+        </div>
+    </ul>
+
+    <a href="#/manager/{{model.managerId}}/campaign/new" class="btn btn-primary btn-block">Create Campaign</a>
+</div>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container-fluid">
+        <p class="navbar-text pull-right">
+            <a href="#/manager/{{model.managerId}}" class="navbar-link">
+              <span class="glyphicon glyphicon-user white">
+              </span>
+            </a>
+        </p>
+    </div>
+</nav>

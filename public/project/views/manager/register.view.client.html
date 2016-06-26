@@ -1,0 +1,36 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Ads Manager</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-home white"></span> Home</a></li>
+                <li><a href="#/manager/login">Manager Login</a></li>
+                <li><a href="#/user/login">User Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="alert alert-danger" ng-show="register.$submitted && register.$invalid">
+        <strong>Error</strong> Please check that all fields are valid
+    </div>
+    <h1>Register</h1>
+    <form name="register" novalidate>
+        <input ng-model="model.manager.username" type="text" class="form-control" name="username" placeholder="username" required/>
+        <span ng-show="register.$submitted && register.username.$invalid">Username is required</span>
+        <input ng-model="model.manager.password" type="password" class="form-control" name="password" placeholder="password" required/>
+        <span ng-show="register.$submitted && register.password.$invalid">Password is required</span>
+        <input ng-model="model.manager.verifyPassword" ng-pattern="model.manager.password" type="password" class="form-control" name="verify" placeholder="verify password" required/>
+        <span ng-show="register.$submitted && register.verify.$error.pattern">Passwords don't match</span>
+        <button type="submit" ng-click="register.$valid && model.register(model.manager.username, model.manager.password)" class="btn btn-primary btn-block" style="margin-bottom: 5px">Register</button>
+    </form>
+    <a href="#/manager/login" class="btn btn-danger btn-block">Cancel</a>
+</div>

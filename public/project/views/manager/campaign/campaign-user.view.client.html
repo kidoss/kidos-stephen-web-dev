@@ -1,0 +1,44 @@
+<form name="new" novalidate>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <p class="navbar-text pull-left">
+                <a href="#/manager/{{model.managerId}}/campaign/{{model.campaignId}}" class="navbar-link">
+                  <span class="glyphicon glyphicon-chevron-left">
+                  </span>
+                </a>
+            </p>
+            <a class="navbar-brand">Add User to {{model.campaign.name}}</a>
+        </div>
+    </nav>
+
+<div class="container">
+        <div class="input-group" style="margin-bottom: 5px">
+            <input ng-model="model.search" type="text" class="form-control" placeholder="Search user">
+            <span class="input-group-btn">
+                <a ng-click="model.searchUsers(model.search)" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+                </a>
+            </span>
+        </div>
+
+    <ul class="list-group">
+        <div ng-repeat="user in model.users" class="container">
+
+            <li class="list-group-item">
+                <a ng-click="model.addCampaignUser(user)">{{user.username}}</a>
+            </li>
+
+        </div>
+    </ul>
+</div>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container-fluid">
+        <p class="navbar-text pull-right">
+            <a href="#/manager/{{model.managerId}}" class="navbar-link">
+              <span class="glyphicon glyphicon-user white">
+              </span>
+            </a>
+        </p>
+    </div>
+</nav>
