@@ -28,10 +28,6 @@
         vm.createAd = createAd;
 
         function createAd(ad, upload) {
-            console.log(ad);
-            console.log(upload);
-            console.log($scope.upload);
-
             if(ad.upload) {
                 adService
                     .upload(ad.upload)
@@ -71,6 +67,7 @@
                 .findAdById(vm.adId)
                 .then(function(response) {
                     vm.ad = response.data;
+                    console.log(vm.ad);
                 });
         }
 
