@@ -1,7 +1,7 @@
 module.exports = function() {
     var mongoose = require('mongoose');
-    var user = 'admin';
-    var password = 'gUUXLpey4pSq';
+    var user = process.env.OPENSHIFT_MONGODB_DB_USERNAME;
+    var password = process.env.OPENSHIFT_MONGODB_DB_PASSWORD;
     var host = process.env.OPENSHIFT_MONGODB_DB_HOST;
     var port = process.env.OPENSHIFT_MONGODB_DB_PORT;
 
